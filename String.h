@@ -9,6 +9,10 @@ class String {
     
     void reserve (size_t n = 0);
 
+    void resize (size_t n);
+
+    void resize (size_t n, char c);
+
     size_t size() const;
     
     size_t length() const;
