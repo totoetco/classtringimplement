@@ -43,8 +43,6 @@ class String {
     String (size_t cap = CAPACITY_DEFAULT);
         
     String (const char* cstr);
-    //Crée un ensemble de taille nbElements, avec les
-    //nbElements premières valeurs de t
     
     virtual ~String ();
     //libère la totalité des ressources

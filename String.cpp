@@ -3,7 +3,11 @@
 #include "String.h"
 
 void String::Afficher(void){
-...
+    
+    for(size_t i=0 ; i<len ; i++) {
+        printf("%c",str[i]);
+    }
+    printf("\n");
 }
 
 const char* String::c_str() const
@@ -14,4 +18,14 @@ const char* String::c_str() const
     }
     rep[len] = '\0';
     return rep;
+}
+
+size_t String::size() const
+{
+    return len;
+}
+
+void String::clear()
+{
+  len = 0;
 }
