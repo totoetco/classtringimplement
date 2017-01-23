@@ -66,5 +66,37 @@ String & String::operator= (const String & unStr)
     return *this;
 }
 
+String & String::operator= (const char * uneChaine)
+{
+    size_t size = 0;
+    while(uneChaine[size++] != '\0') {}
+    size--;
+    
+    cpty = len = size;
+    delete [] str;
+    str = new char[cpty];
+    
+    for(size_t i=0 ; i<len ; i++) {
+        str[i] = uneChaine[i];
+    }
+    
+    return *this;
+}
 
-
+String String::operator+ (const char* uneChaine)
+{
+    String s(*this);
+    size_t si = 0;
+    while(uneChaine[si++] != '\0') {}
+    si--;
+    
+    if(s.length()+si > s.capacity()) {
+        s.reserve(s.length()+si);
+    }
+    
+    for(size_t i=0 ; i<si ; i++) {
+        s.str[s.length()+i] = uneChaine[i];
+    }
+    s.len += si;
+    return s;
+}
