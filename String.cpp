@@ -20,6 +20,7 @@ const char* String::c_str() const
     return rep;
 }
 
+<<<<<<< HEAD
 size_t String::size() const
 {
     return len;
@@ -29,3 +30,9 @@ void String::clear()
 {
   len = 0;
 }
+=======
+size_t String::length() const
+{
+    return len;
+}
+>>>>>>> e7b56214d3582c3d2e7ca9bee24f73afa007bbf2
