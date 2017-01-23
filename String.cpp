@@ -10,6 +10,30 @@ void String::Afficher(void){
     printf("\n");
 }
 
+void String::resize(size_t n){
+    if (n<len){
+        char* t = new char[cpty];
+            for(size_t i=0 ; i<n ; i++) {
+                t[i] = str[i];
+            }
+        delete [] str;
+        str = t;
+    }
+
+}
+
+void String::resize(size_t n, char c){
+    if (n<len){
+        char* t = new char[cpty];
+            for(size_t i=0 ; i<n ; i++) {
+                t[i] = str[i];
+            }
+        delete [] str;
+        str = t;
+    }
+
+}
+
 const char* String::c_str() const
 {
     char rep[len+1];
