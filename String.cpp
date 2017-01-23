@@ -18,6 +18,16 @@ void String::resize(size_t n){
             }
         delete [] str;
         str = t;
+    } else {
+         char* t = new char[cpty];
+            for(size_t i=0 ; i<n ; i++) {
+                t[i] = str[i];
+            }
+            for(size_t i=len ; i<n ; i++) {
+                t[i] = ''
+            }
+        delete [] str;
+        str = t;       
     }
 
 }
