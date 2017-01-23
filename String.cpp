@@ -15,3 +15,8 @@ const char* String::c_str() const
     rep[len] = '\0';
     return rep;
 }
+
+size_t String::length() const
+{
+    return len;
+}
