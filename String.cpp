@@ -34,3 +34,37 @@ size_t String::length() const
 {
     return len;
 }
+
+
+
+
+//--------Les operateurs.
+
+
+String String::operator+ (char unchar)
+{
+    String s(*this);
+    if(s.length()+1 > s.capacity()) {
+        s.reserve(s.length()+1);
+    }
+    s.str[s.length()] = unchar;
+    s.len++;
+    return s;
+}
+
+
+String & String::operator= (const String & unStr)
+{
+    len = unStr.length();
+    cpty = unStr.capacity();
+
+    delete [] str;
+    str = new char[cpty];
+    for(size_t i=0 ; i<len ; i++) {
+        str[i] = unStr.str[i];
+    }
+    return *this;
+}
+
+
+
