@@ -60,15 +60,7 @@ void String::reserve(size_t n)
 }
 
 
-const char* String::c_str() const
-{
-    char rep[len+1];
-    for(size_t i=0 ; i<len ; i++) {
-        rep[i] = str[i];
-    }
-    rep[len] = '\0';
-    return rep;
-}
+
 
 void String::clear()
 {
@@ -89,6 +81,12 @@ size_t String::length() const
 size_t String::capacity() const
 {
     return cpty;
+}
+
+const char* String::c_str() const
+{
+  
+    return str;
 }
 
 
@@ -114,16 +112,13 @@ String String::operator+ (char unchar)
 
 String String::operator+ (const String st) {
 	String s(*this);
-    size_t si = 0;
-    while(uneChaine[si++] != '\0') {}
-    si--;
-    
+    size_t si = st.length();
     if(s.length()+si > s.capacity()) {
         s.reserve(s.length()+si);
     }
     
     for(size_t i=0 ; i<si ; i++) {
-        s.str[s.length()+i] = uneChaine[i];
+        s.str[s.length()+i] = st.str[i];
     }
     s.len += si;
     return s;	
