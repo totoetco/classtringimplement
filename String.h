@@ -23,7 +23,7 @@ class String {
     
     size_t length() const;
     
-    size_t _capacity() const;
+    size_t capacity() const;
 	
     
     bool empty() const;
