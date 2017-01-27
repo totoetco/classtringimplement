@@ -175,5 +175,3 @@ String String::operator+ (const char* uneChaine)
     s.len += si;
     return s;
 }
-
-

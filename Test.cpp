@@ -2,10 +2,17 @@
 #include <cstdlib>
 #include "String.h"
 
-void testdefonctions1(){
-# tester par exemple size, length et capacity...
+void t1(){
+    printf("test 1 \n");
+    String s;
+    printf("size : %lu \n", s.size());
+	printf("length : %lu \n", s.length());
+	printf("capacity : %lu \n",s.capacity());
+    s.Afficher();
+    printf("  \n");
 }
+
 int main() {
-    testdefonctions1();
+    t1();
     return 0;
 }
