@@ -1,5 +1,10 @@
-const uint CAPACITY_DEFAULT = 5; # on utilise unsigned car la capacité peut pas être négative. Donnée par défault à 5
+#include <cstdlib>
+#include <cstdio>
+
+const uint CAPACITY_DEFAULT = 5; 
+# on utilise unsigned car la capacité ne peut pas être négative. Donnée par défault à 5
 typedef size_t unsignedint;
+
 class String {
     //----------------------------------------------- PUBLIC
 
@@ -12,12 +17,15 @@ class String {
     void resize (size_t n);
 
     void resize (size_t n, char c);
-
+	
+   //getters
+   
     size_t size() const;
     
     size_t length() const;
     
-    size_t capacity() const;
+    size_t _capacity() const;
+	
     
     bool empty() const;
     
@@ -26,6 +34,9 @@ class String {
     const char* c_str() const;
     
     size_t max_size() const;
+	
+	// Destructeur
+	~String();
     
     // Surcharge operateurs
     
