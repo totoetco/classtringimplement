@@ -11,37 +11,24 @@ void String::Afficher(void){
 }
 
 void String::resize(size_t n){
-    if (n<len){
-        char* t = new char[cpty];
-            for(size_t i=0 ; i<n ; i++) {
-                t[i] = str[i];
-            }
-        delete [] str;
-        str = t;
-    } else {
-         char* t = new char[cpty];
-            for(size_t i=0 ; i<n ; i++) {
-                t[i] = str[i];
-            }
-            for(size_t i=len ; i<n ; i++) {
-                t[i] = ''
-            }
-        delete [] str;
-        str = t;       
-    }
-
 }
 
-void String::resize(size_t n, char c){
-    if (n<len){
-        char* t = new char[cpty];
-            for(size_t i=0 ; i<n ; i++) {
-                t[i] = str[i];
-            }
-        delete [] str;
-        str = t;
+void String::resize(size_t n, char c) {
+    if(n<len) {
+        for(int i=n ; i<len ; i++) {
+            str[i] = (char)0;
+        }
+        len = n;
     }
-
+    else if(n>len) {
+        if(n>cpty) {
+            this->reserve(n);
+        }
+        for(int i=len ; i<n ; i++) {
+            str[i] = c;
+        }
+        len = n;
+    }
 }
 
 const char* String::c_str() const
