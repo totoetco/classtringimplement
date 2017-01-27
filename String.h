@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-const uint CAPACITY_DEFAULT = 5; 
+const unsigned int CAPACITY_DEFAULT = 5; 
 //on utilise unsigned car la capacité ne peut pas être négative. Donnée par défault à 5
 typedef size_t unsignedint;
 
@@ -35,7 +35,7 @@ class String {
     size_t max_size() const;
 	
 	// Destructeur
-	~String();
+	virtual ~String ();
     
     // Surcharge operateurs
     
@@ -58,7 +58,7 @@ class String {
         
     String (const char* cstr);
     
-    virtual ~String ();
+    //virtual ~String ();
     //libère la totalité des ressources
 
     private :
