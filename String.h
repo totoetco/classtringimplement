@@ -2,11 +2,10 @@
 #include <cstdio>
 
 const uint CAPACITY_DEFAULT = 5; 
-# on utilise unsigned car la capacité ne peut pas être négative. Donnée par défault à 5
+//on utilise unsigned car la capacité ne peut pas être négative. Donnée par défault à 5
 typedef size_t unsignedint;
 
 class String {
-    //----------------------------------------------- PUBLIC
 
     public: //nos methodes
     
@@ -18,7 +17,7 @@ class String {
 
     void resize (size_t n, char c);
 	
-   //getters
+//getters
    
     size_t size() const;
     
@@ -62,16 +61,13 @@ class String {
     virtual ~String ();
     //libère la totalité des ressources
 
-    //------------------- PRIVE
+    private :
 
     protected:
-    //-------------------Méthodes protégées
 
     //-------------------Attributs protégés
     size_t cpty;
     size_t len;
     char* str;
 };
-
-#endif // String_H
 
