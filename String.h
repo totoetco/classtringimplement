@@ -13,9 +13,7 @@ class String {
     
     void reserve (size_t n = 0);
 
-    void resize (size_t n);
-
-    void resize (size_t n, char c);
+    void resize(size_t n, char c = (char)0); // une seule déclaration pour deux cas : avec ou sans "c" spécifié.
 	
 //getters
    
