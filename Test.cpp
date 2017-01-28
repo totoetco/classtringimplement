@@ -1,4 +1,3 @@
-using namespace std;
 #include <cstdio>
 #include <cstdlib>
 #include "String.h"
@@ -52,13 +51,13 @@ void t4() {
     printf("test 4  \n");
     String sv;
     String snv("Pas Vide");
-    printf("%d et %d",sv.empty(),snv.empty());
+    printf("%d et %d \n",sv.empty(),snv.empty());
     printf("  \n");
 }
 
 void t5() {
     printf("test 5  \n");
-    String snv("Pas Vide");
+    String snv("Pas Vide \n");
     snv.Afficher();
     snv.clear();
     snv.Afficher();
@@ -88,7 +87,7 @@ void t7() {
     printf("test 7  \n");
     String s = "Test7";
     s.Afficher();
-    printf("c_str() : %s",s.c_str());
+    printf("c_str() : %s \n",s.c_str());
     printf("  \n");
 }
 
