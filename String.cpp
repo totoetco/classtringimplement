@@ -85,8 +85,12 @@ size_t String::capacity() const
 
 const char* String::c_str() const
 {
-  
-    return str;
+    char rep[len+1];
+    for(size_t i=0 ; i<len ; i++) {
+        rep[i] = str[i];
+    }
+    rep[len] = '\0';
+    return rep;
 }
 
 
