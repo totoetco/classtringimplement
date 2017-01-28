@@ -1,8 +1,14 @@
+//Bibliothèques utilisées
+
 #include <cstdio>
 #include <cstdlib>
 #include "String.h"
 
 
+// --- Définition des méthodes --- //
+
+
+//Affichage de la chaine
 void String::Afficher (void)
 {
     for(size_t i=0 ; i<len ; i++) {

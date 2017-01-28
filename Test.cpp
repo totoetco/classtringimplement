@@ -33,14 +33,15 @@ void t2() {
     printf("  \n");
 }
 
+//Test d'affectations de chaine 
 void t3() {
     printf("test 3 \n");
     String s("Bonjour, comment ça va ?");
     
     String s1;
     String s2;
-    s1 = "a";
-    s2 = "plo";
+    s1 = "premiere_chaine";
+    s2 = "seconde_chaine";
     String s3 = s;
     s1.Afficher();
     s2.Afficher();
@@ -112,9 +113,10 @@ void t8() {
 
 }
 
+//Test pour les concaténations de chaine 
 void t9() {
     printf("test 9  \n");
-    String s("Bonjour");
+    String s("Bonjou");
     s.Afficher();
 	printf("length : %lu \n", s.length());
 	printf("capacity : %lu \n",s.capacity());
@@ -155,7 +157,7 @@ void t10() {
     
 }
 
-//Code principal
+//Code principal - Execution des tests
 int main() {
     t1();
     t2();
