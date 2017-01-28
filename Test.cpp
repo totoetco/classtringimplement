@@ -2,8 +2,12 @@
 #include <cstdlib>
 #include "String.h"
 
+
+//-----------Tests -----------//
+
+// si aucune chaine n'est donnée au constructeur
 void t1(){
-    printf("test 1 \n");
+    printf("\ntest 1 \n");
     String s;
     printf("size : %lu \n", s.size());
 	printf("length : %lu \n", s.length());
@@ -12,9 +16,10 @@ void t1(){
     printf("  \n");
 }
 
+// maintenant avec une chaine de caractères 
 void t2() {
 	printf("test 2 \n");
-    String s("Bonjour, comment va ?");
+    String s("Bonjour, comment ça va ?");
     printf("size : %lu \n", s.size());
 	printf("length : %lu \n", s.length());
 	printf("capacity : %lu \n",s.capacity());
@@ -30,11 +35,11 @@ void t2() {
 
 void t3() {
     printf("test 3 \n");
-    String s("Bonjour, comment va ?");
+    String s("Bonjour, comment ça va ?");
     
     String s1;
     String s2;
-    s1 = 'a';
+    s1 = "a";
     s2 = "plo";
     String s3 = s;
     s1.Afficher();
@@ -47,14 +52,18 @@ void t3() {
     s3.Afficher();
 	printf("  \n");
 }
+
+//Test de la méthode empty (renvoie 1 si chaine vide / 0 sinon)
 void t4() {
     printf("test 4  \n");
     String sv;
     String snv("Pas Vide");
-    printf("%d et %d \n",sv.empty(),snv.empty());
+    printf("Chaine vide ? %d \n", sv.empty());
+    printf("Chaîne vide ? %d \n", snv.empty()); 
     printf("  \n");
 }
 
+//Test si la methode clear ne modifie pas la capacité allouée
 void t5() {
     printf("test 5  \n");
     String snv("Pas Vide \n");
@@ -67,6 +76,8 @@ void t5() {
     printf("  \n");
 }
 
+
+//Test de la méthode reserve.
 void t6() {
     printf("test 6  \n");
     String s = "Test6";
@@ -74,15 +85,16 @@ void t6() {
     printf("size : %lu \n", s.size());
 	printf("capacity : %lu \n",s.capacity());
     s.reserve(10);
-	printf("capacity : %lu \n",s.capacity());
+	printf("new capacity : %lu \n",s.capacity());
     s.reserve(7);
-	printf("capacity : %lu \n",s.capacity());
+	printf("new capacity : %lu \n",s.capacity());
     s.reserve(3);
-	printf("capacity : %lu \n",s.capacity());
+	printf("new capacity : %lu \n",s.capacity());
     s.Afficher();
     printf("  \n");
 }
 
+//Test de la methode c_str
 void t7() {
     printf("test 7  \n");
     String s = "Test7";
@@ -91,6 +103,7 @@ void t7() {
     printf("  \n");
 }
 
+//Test de la methode max_size
 void t8() {
     printf("test 8  \n");
     String s;
@@ -101,7 +114,7 @@ void t8() {
 
 void t9() {
     printf("test 9  \n");
-    String s("Bonjou");
+    String s("Bonjour");
     s.Afficher();
 	printf("length : %lu \n", s.length());
 	printf("capacity : %lu \n",s.capacity());
@@ -110,8 +123,8 @@ void t9() {
     
     String s1 = s+'r';
     s1.Afficher();
-	printf("length : %lu \n", s1.length());
-	printf("capacity : %lu \n",s1.capacity());
+	printf("new length : %lu \n", s1.length());
+	printf("new capacity : %lu \n",s1.capacity());
     s.Afficher();
     printf("  \n");
     
@@ -119,9 +132,12 @@ void t9() {
     s2.Afficher();
     String s3 = s1+s2;
     s3.Afficher();
+    printf("new length : %lu \n", s3.length());
+    printf("new capacity : %lu \n", s3.capacity());
     printf("  \n");
 }
 
+//Test de la methode resize
 void t10() {
     printf("test 10  \n");;
     String s("Codage d'une classe string");
@@ -129,16 +145,17 @@ void t10() {
 	printf("length : %lu \n", s.length());
     s.resize(s.size()+2, '+');
     s.Afficher();
-	printf("length : %lu \n", s.length());
+	printf("new length : %lu \n", s.length());
     s.resize(7);
     s.Afficher();
-	printf("length : %lu \n", s.length());
+	printf("new length : %lu \n", s.length());
     s.resize(10);
     s.Afficher();
-	printf("length : %lu \n", s.length());
+	printf("new length : %lu \n", s.length());
     
 }
 
+//Code principal
 int main() {
     t1();
     t2();

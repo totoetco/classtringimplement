@@ -11,6 +11,8 @@ void String::Afficher (void)
     printf("\n");
 }
 
+
+//Allocation de mémoire pour modifier la capacité.
 void String::reserve(size_t n) 
 {
     if(n != cpty) {
@@ -54,6 +56,8 @@ void String::clear()
     len = 0;
 }
 
+
+//Récupère le char* contenue dans un string 
 const char* String::c_str() const
 {
     char rep[len+1];
@@ -69,6 +73,8 @@ size_t String::max_size() const
     return -1;
 }
 
+
+//Redimensionne le conteneur pour qu'il contienne n éléments
 void String::resize(size_t n, char c) {
     if(n<len) {
         for(int i=n ; i<len ; i++) {
