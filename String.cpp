@@ -61,7 +61,7 @@ void String::clear()
 //Redimensionne le conteneur pour qu'il contienne n éléments
 void String::resize(size_t n, char c) {
     if(n<len) {
-        for(int i=n ; i<len ; i++) {
+        for(unsigned int i=n ; i<len ; i++) {
             str[i] = (char)0;
         }
         len = n;
@@ -70,7 +70,7 @@ void String::resize(size_t n, char c) {
         if(n>cpty) {
             this->reserve(n);
         }
-        for(int i=len ; i<n ; i++) {
+        for(unsigned int i=len ; i<n ; i++) {
             str[i] = c;
         }
         len = n;
