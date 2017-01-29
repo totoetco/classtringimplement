@@ -201,20 +201,20 @@ String & String::operator= (const char * uneChaine)
     return *this;
 }
 
-//surchage de l'operateur d'accès [] par adressage
-/*char& operator[] (size_t pos){ 
+
+char& String::operator[] (size_t pos){ 
 
     if (pos<0) {
-       return data_[len + pos];
+       return str[len + pos];
     }
-    else if  (pos<=MAX_SIZE){       
-	return data_[pos]; }
+    elseif  (pos<=MAX_SIZE){       
+	return str[pos]; }
     else{
 	printf(" position en dehors du charactère\n");
-	return data_[MAX_SIZE];
+	return str[MAX_SIZE];
 }    
 }
-*/
+
 char& String::operator[] (size_t pos){
     if (pos<=MAX_SIZE)
 	return str[pos];
