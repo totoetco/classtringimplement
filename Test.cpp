@@ -9,9 +9,9 @@
 void t1(){
     printf("\ntest 1 \n");
     String s;
-    printf("size : %lu \n", s.size());
-	printf("length : %lu \n", s.length());
-	printf("capacity : %lu \n",s.capacity());
+    printf("size : %u \n", s.size());
+	printf("length : %u \n", s.length());
+	printf("capacity : %u \n",s.capacity());
     s.Afficher();
     printf("  \n");
 }
