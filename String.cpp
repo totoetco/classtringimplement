@@ -41,17 +41,6 @@ void String::reserve(size_t n)
 
 
 
-//Récupère le char* contenue dans un string, on aurait aussi pu directement renvoyer str qui est un attribut de type pointeur 
-const char* String::c_str() const
-{
-    char rep[len+1];
-    for(size_t i=0 ; i<len ; i++) {
-        rep[i] = str[i];
-    }
-    rep[len] = '\0';
-    return rep;
-}
-
 
 //vérifie si la chaine est vide
 bool String::empty() const
@@ -112,8 +101,21 @@ size_t String::max_size() const
 {
     return -1;
 }
-// Surcharge d'opérateurs
 
+
+//Récupère le char* contenue dans un string, on aurait aussi pu directement renvoyer str qui est un attribut de type pointeur 
+const char* String::c_str() const
+{
+    char rep[len+1];
+    for(size_t i=0 ; i<len ; i++) {
+        rep[i] = str[i];
+    }
+    rep[len] = '\0';
+    return rep;
+}
+
+// Surcharge d'opérateurs
+//operateurs d' addition
 String String::operator+ (char unchar)
 {
     String s(*this);
@@ -157,7 +159,7 @@ String String::operator+ (const String st)
     s.len += si;
     return s;
 }
-
+//operateurs de comparaison
 String & String::operator= (const String & unStr)
 {
     len = unStr.length();
