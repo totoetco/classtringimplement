@@ -20,7 +20,7 @@ void t1(){
 void t2() {
 	printf("test 2 \n");
     String s("Bonjour, comment ça va ?\n");
-	printf(s.c_str());
+	printf("la valeur du pointeur est : %p ",s.c_str());
     printf("size : %u \n", s.size());
 	printf("length : %u \n", s.length());
 	printf("capacity : %u \n",s.capacity());
