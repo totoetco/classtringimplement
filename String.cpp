@@ -3,7 +3,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include "String.h"
-
+//definition du parametre constant
+const size_t String::MAX_SIZE = 100;
 
 // --- Définition des méthodes --- //
 
@@ -207,23 +208,23 @@ char& String::operator[] (size_t pos){
     if (pos<0) {
        return str[len + pos];
     }
-    else if  (pos<=MAX_SIZE){       
+    else if  (pos<=len){       
 	return str[pos]; }
     else{
 	printf(" position en dehors du charactère\n");
-	return str[MAX_SIZE];
+	return str[len];
 }    
 }
 
 const char& String::operator[] (size_t pos) const{
     if (pos<0) {
-		return str[MAX_SIZE+pos];
+		return str[len+pos];
 	}
-	else if (pos<=MAX_SIZE)
+	else if (pos<=len)
 	{return str[pos];}
     else{
 	printf("position en dehors du string");
-	return str[MAX_SIZE];
+	return str[len];
     }
 }
 
