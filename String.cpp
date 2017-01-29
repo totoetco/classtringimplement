@@ -1,4 +1,4 @@
-//Bibliothèques utilisées
+o//Bibliothèques utilisées
 
 #include <cstdio>
 #include <cstdlib>
@@ -50,12 +50,12 @@ size_t String::length() const
     return len;
 }
 
-//retourne la mémoire
+//retourne la mémoire stockée
 size_t String::capacity() const
 {
     return cpty;
 }
-//retroune la taille maximale par defaut
+//retroune la taille maximale par defaut, ici -1 car ce n'est pas un attribut de notre classe
 size_t String::max_size() const
 {
     return -1;
@@ -75,7 +75,7 @@ void String::clear()
 }
 
 
-//Récupère le char* contenue dans un string 
+//Récupère le char* contenue dans un string, 
 const char* String::c_str() const
 {
     char rep[len+1];
