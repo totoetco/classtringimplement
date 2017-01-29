@@ -207,7 +207,7 @@ char& String::operator[] (size_t pos){
     if (pos<0) {
        return str[len + pos];
     }
-    elseif  (pos<=MAX_SIZE){       
+    else if  (pos<=MAX_SIZE){       
 	return str[pos]; }
     else{
 	printf(" position en dehors du charactère\n");
@@ -215,14 +215,7 @@ char& String::operator[] (size_t pos){
 }    
 }
 
-char& String::operator[] (size_t pos){
-    if (pos<=MAX_SIZE)
-	return str[pos];
-    else{
-	printf("Position en dehors du rang\n");
-	return str[MAX_SIZE];//Haven't found a better solution;
-    }
-}
+
 
 //Constructeurs - destructeur
 String::String ( const String & unStr )
