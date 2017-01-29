@@ -202,7 +202,7 @@ String & String::operator= (const char * uneChaine)
 }
 
 //surchage de l'operateur d'accès [] par adressage
-char& operator[] (size_t pos){ 
+/*char& operator[] (size_t pos){ 
 
     if (pos<0) {
        return data_[len + pos];
@@ -213,6 +213,16 @@ char& operator[] (size_t pos){
 	printf(" position en dehors du charactère\n");
 	return data_[MAX_SIZE];
 }    
+}
+*/
+char& String::operator[] (size_t pos){
+    if (pos<=MAX_SIZE)
+	return data_[pos];
+    else{
+	printf("Warning(operator[]): "
+	       "Requied position out of range, returning last char\n");
+	return data_[MAX_SIZE];//Haven't found a better solution;
+    }
 }
 
 //Constructeurs - destructeur
