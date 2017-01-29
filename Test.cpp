@@ -14,6 +14,7 @@ void t1(){
 	printf("capacity : %u \n",s.capacity());
     s.Afficher();
     printf("  \n");
+ 
 }
 
 // maintenant avec une chaine de caractères 
@@ -31,6 +32,7 @@ void t2() {
 	printf("length : %u \n", s1.length());
 	printf("capacity : %u \n",s1.capacity());
     s.Afficher();
+	printf ("l'avant dernier caractère de la phrase est %c", s1[-3]);
     printf("  \n");
 }
 
