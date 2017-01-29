@@ -1,4 +1,4 @@
-o//Bibliothèques utilisées
+//Bibliothèques utilisées
 
 #include <cstdio>
 #include <cstdlib>
@@ -106,12 +106,12 @@ size_t String::max_size() const
 //Récupère le char* contenue dans un string, on aurait aussi pu directement renvoyer str qui est un attribut de type pointeur 
 const char* String::c_str() const
 {
-    char rep[len+1];
-    for(size_t i=0 ; i<len ; i++) {
-        rep[i] = str[i];
-    }
-    rep[len] = '\0';
-    return rep;
+    //char rep[len+1];
+    //for(size_t i=0 ; i<len ; i++) {
+     //   rep[i] = str[i];
+  //  }
+    //rep[len] = '\0';
+    return str;
 }
 
 // Surcharge d'opérateurs
