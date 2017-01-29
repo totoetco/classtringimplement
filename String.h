@@ -71,6 +71,6 @@ const char& operator[] (size_t pos) const;
     size_t cpty;
     size_t len;
     char* str;
-	size_t MAX_SIZE;
+	static const size_t MAX_SIZE;
 };
 
