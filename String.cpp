@@ -217,11 +217,10 @@ String & String::operator= (const char * uneChaine)
 */
 char& String::operator[] (size_t pos){
     if (pos<=MAX_SIZE)
-	return data_[pos];
+	return str[pos];
     else{
-	printf("Warning(operator[]): "
-	       "Requied position out of range, returning last char\n");
-	return data_[MAX_SIZE];//Haven't found a better solution;
+	printf("Position en dehors du rang\n");
+	return str[MAX_SIZE];//Haven't found a better solution;
     }
 }
 
