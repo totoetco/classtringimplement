@@ -19,7 +19,7 @@ void t1(){
 // maintenant avec une chaine de caractères 
 void t2() {
 	printf("test 2 \n");
-    String s("Bonjour, comment ça va ?");
+    String s("Bonjour, comment ça va ?\n");
 	printf(s.c_str());
     printf("size : %u \n", s.size());
 	printf("length : %u \n", s.length());
