@@ -70,5 +70,6 @@ char& operator[] (size_t pos);
     size_t cpty;
     size_t len;
     char* str;
+	size_t MAX_SIZE;
 };
 
