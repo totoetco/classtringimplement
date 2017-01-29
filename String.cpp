@@ -96,10 +96,10 @@ size_t String::capacity() const
 {
     return cpty;
 }
-//retroune la taille maximale par defaut, ici -1 car ce n'est pas un attribut de notre classe
+//retroune la taille maximale par defaut
 size_t String::max_size() const
 {
-    return -1;
+    return MAX_SIZE;
 }
 
 
@@ -215,6 +215,18 @@ char& String::operator[] (size_t pos){
 }    
 }
 
+const char& String::operator[] (size_t pos) const{
+    if (pos<0) {
+		return str[MAX_SIZE+pos];
+	}
+	else if (pos<=MAX_SIZE)
+	{return str[pos];}
+    else{
+	printf("position en dehors du string");
+	return str[MAX_SIZE];
+    }
+}
+
 
 
 //Constructeurs - destructeur
@@ -258,6 +270,9 @@ String::String (const char* cstr)
         str[i] = cstr[i];
     }
 }
+
+
+
 //Fin du Constructeur2
 
 String::~String ( )
