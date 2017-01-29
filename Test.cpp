@@ -20,15 +20,15 @@ void t1(){
 void t2() {
 	printf("test 2 \n");
     String s("Bonjour, comment ça va ?");
-    printf("size : %lu \n", s.size());
-	printf("length : %lu \n", s.length());
-	printf("capacity : %lu \n",s.capacity());
+    printf("size : %u \n", s.size());
+	printf("length : %u \n", s.length());
+	printf("capacity : %u \n",s.capacity());
     s.Afficher();
     printf("  \n");
     String s1(s);
-    printf("size : %lu \n", s1.size());
-	printf("length : %lu \n", s1.length());
-	printf("capacity : %lu \n",s1.capacity());
+    printf("size : %u \n", s1.size());
+	printf("length : %u \n", s1.length());
+	printf("capacity : %u \n",s1.capacity());
     s.Afficher();
     printf("  \n");
 }
@@ -71,8 +71,8 @@ void t5() {
     snv.Afficher();
     snv.clear();
     snv.Afficher();
-    printf("size : %lu \n", snv.size());
-	printf("capacity : %lu \n",snv.capacity());
+    printf("size : %u \n", snv.size());
+	printf("capacity : %u \n",snv.capacity());
     snv.Afficher();
     printf("  \n");
 }
@@ -83,14 +83,14 @@ void t6() {
     printf("test 6  \n");
     String s = "Test6";
     s.Afficher();
-    printf("size : %lu \n", s.size());
-	printf("capacity : %lu \n",s.capacity());
+    printf("size : %u \n", s.size());
+	printf("capacity : %u \n",s.capacity());
     s.reserve(10);
-	printf("new capacity : %lu \n",s.capacity());
+	printf("new capacity : %u \n",s.capacity());
     s.reserve(7);
-	printf("new capacity : %lu \n",s.capacity());
+	printf("new capacity : %u \n",s.capacity());
     s.reserve(3);
-	printf("new capacity : %lu \n",s.capacity());
+	printf("new capacity : %u \n",s.capacity());
     s.Afficher();
     printf("  \n");
 }
@@ -108,7 +108,7 @@ void t7() {
 void t8() {
     printf("test 8  \n");
     String s;
-    printf("maxsize : %lu \n",s.max_size());
+    printf("maxsize : %u \n",s.max_size());
     printf("  \n");
 
 }
@@ -118,15 +118,15 @@ void t9() {
     printf("test 9  \n");
     String s("Bonjou");
     s.Afficher();
-	printf("length : %lu \n", s.length());
-	printf("capacity : %lu \n",s.capacity());
+	printf("length : %u \n", s.length());
+	printf("capacity : %u \n",s.capacity());
     s.Afficher();
     printf("  \n");
     
     String s1 = s+'r';
     s1.Afficher();
-	printf("new length : %lu \n", s1.length());
-	printf("new capacity : %lu \n",s1.capacity());
+	printf("new length : %u \n", s1.length());
+	printf("new capacity : %u \n",s1.capacity());
     s.Afficher();
     printf("  \n");
     
@@ -134,8 +134,8 @@ void t9() {
     s2.Afficher();
     String s3 = s1+s2;
     s3.Afficher();
-    printf("new length : %lu \n", s3.length());
-    printf("new capacity : %lu \n", s3.capacity());
+    printf("new length : %u \n", s3.length());
+    printf("new capacity : %u \n", s3.capacity());
     printf("  \n");
 }
 
@@ -144,16 +144,16 @@ void t10() {
     printf("test 10  \n");;
     String s("Codage d'une classe string");
     s.Afficher();
-	printf("length : %lu \n", s.length());
+	printf("length : %u \n", s.length());
     s.resize(s.size()+2, '+');
     s.Afficher();
-	printf("new length : %lu \n", s.length());
+	printf("new length : %u \n", s.length());
     s.resize(7);
     s.Afficher();
-	printf("new length : %lu \n", s.length());
+	printf("new length : %u \n", s.length());
     s.resize(10);
     s.Afficher();
-	printf("new length : %lu \n", s.length());
+	printf("new length : %u \n", s.length());
     
 }
 
