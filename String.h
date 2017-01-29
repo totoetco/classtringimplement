@@ -51,6 +51,7 @@ class String {
 	
 // autres operateurs utiles
 char& operator[] (size_t pos);
+const char& operator[] (size_t pos) const;
 
     //---------------Constructeurs - destructeur
     String ( const String & unString );
