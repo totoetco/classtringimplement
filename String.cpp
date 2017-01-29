@@ -18,7 +18,7 @@ void String::Afficher (void)
 }
 
 
-//Allocation de mémoire pour modifier la capacité.
+//Allocation de mémoire selon une taille donnée
 void String::reserve(size_t n) 
 {
     if(n != cpty) {
@@ -36,6 +36,9 @@ void String::reserve(size_t n)
         str = t;
     }
 }
+//getters ---------------------
+
+//retourne la taille
 
 size_t String::size() const
 {
@@ -47,16 +50,25 @@ size_t String::length() const
     return len;
 }
 
+//retourne la mémoire
 size_t String::capacity() const
 {
     return cpty;
 }
+//retroune la taille maximale par defaut
+size_t String::max_size() const
+{
+    return -1;
+}
 
+
+//vérifie si la chaine est vide
 bool String::empty() const
 {
     return !(len);
 }
 
+//vide la memoire pour le string
 void String::clear()
 {
     len = 0;
@@ -74,10 +86,6 @@ const char* String::c_str() const
     return rep;
 }
 
-size_t String::max_size() const
-{
-    return -1;
-}
 
 
 //Redimensionne le conteneur pour qu'il contienne n éléments
