@@ -202,7 +202,8 @@ String & String::operator= (const char * uneChaine)
     return *this;
 }
 
-
+//nouvelle définition des operateurs d'acces permettant de reperer les positions en dehors de la chaine
+//et de prendre en compte les indices negatifs
 char& String::operator[] (size_t pos){ 
 
     if (pos<0) {
@@ -215,7 +216,7 @@ char& String::operator[] (size_t pos){
 	return str[len];
 }    
 }
-
+//même opération que précédente, mais avec des demandes constantes
 const char& String::operator[] (size_t pos) const{
     if (pos<0) {
 		return str[len+pos];
