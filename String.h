@@ -22,13 +22,13 @@ class String {
     size_t length() const;
     
     size_t capacity() const;
-	
+
+    const char* c_str() const;
     
     bool empty() const;
     
     void clear();
     
-    const char* c_str() const;
     
     size_t max_size() const;
 	
@@ -48,6 +48,9 @@ class String {
     String operator+ (const char* uneChaine);
     
     String operator+ (const String st);
+	
+// autres operateurs utiles
+char& operator[] (size_t pos);
 
     //---------------Constructeurs - destructeur
     String ( const String & unString );
