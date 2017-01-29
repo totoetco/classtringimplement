@@ -36,6 +36,58 @@ void String::reserve(size_t n)
         str = t;
     }
 }
+
+
+
+
+
+//Récupère le char* contenue dans un string, on aurait aussi pu directement renvoyer str qui est un attribut de type pointeur 
+const char* String::c_str() const
+{
+    char rep[len+1];
+    for(size_t i=0 ; i<len ; i++) {
+        rep[i] = str[i];
+    }
+    rep[len] = '\0';
+    return rep;
+}
+
+
+//vérifie si la chaine est vide
+bool String::empty() const
+{
+    return !(len);
+}
+
+//vide la memoire pour le string
+void String::clear()
+{
+    len = 0;
+}
+
+
+
+
+
+//Redimensionne le conteneur pour qu'il contienne n éléments
+void String::resize(size_t n, char c) {
+    if(n<len) {
+        for(int i=n ; i<len ; i++) {
+            str[i] = (char)0;
+        }
+        len = n;
+    }
+    else if(n>len) {
+        if(n>cpty) {
+            this->reserve(n);
+        }
+        for(int i=len ; i<n ; i++) {
+            str[i] = c;
+        }
+        len = n;
+    }
+}
+
 //getters ---------------------
 
 //retourne la taille
@@ -60,53 +112,6 @@ size_t String::max_size() const
 {
     return -1;
 }
-
-
-//vérifie si la chaine est vide
-bool String::empty() const
-{
-    return !(len);
-}
-
-//vide la memoire pour le string
-void String::clear()
-{
-    len = 0;
-}
-
-
-//Récupère le char* contenue dans un string, 
-const char* String::c_str() const
-{
-    char rep[len+1];
-    for(size_t i=0 ; i<len ; i++) {
-        rep[i] = str[i];
-    }
-    rep[len] = '\0';
-    return rep;
-}
-
-
-
-//Redimensionne le conteneur pour qu'il contienne n éléments
-void String::resize(size_t n, char c) {
-    if(n<len) {
-        for(int i=n ; i<len ; i++) {
-            str[i] = (char)0;
-        }
-        len = n;
-    }
-    else if(n>len) {
-        if(n>cpty) {
-            this->reserve(n);
-        }
-        for(int i=len ; i<n ; i++) {
-            str[i] = c;
-        }
-        len = n;
-    }
-}
-
 // Surcharge d'opérateurs
 
 String String::operator+ (char unchar)
